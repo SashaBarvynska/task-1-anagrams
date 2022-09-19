@@ -1,6 +1,2 @@
-vscode
-anagrams/coverage
-anagrams/__pycache__
-tests/coverage
-tests/__pycache__
-coverage
+/.vscode
+.coverage
