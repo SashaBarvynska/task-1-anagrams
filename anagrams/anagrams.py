@@ -1,12 +1,13 @@
-def reverse_sentence(sentence="") -> str:
-    if sentence:
-        if type(sentence) == str:
-            return " ".join(map(reverse_word, sentence.split()))
-        raise TypeError("String must be string...Try again")
-    raise SyntaxError("String must not be empty...Try again")
+def reverse_sentence(sentence) -> str:
+
+    if not isinstance(sentence, str):
+        raise TypeError("Argument must be a string")
+    return " ".join(map(reverse_word, sentence.split()))
 
 
 def reverse_word(word: str) -> str:
 
+    if not isinstance(word, str):
+        raise TypeError("Argument must be a string")
     char_only = list(filter(str.isalpha, word))
     return "".join([char if not char.isalpha() else char_only.pop() for char in word])
