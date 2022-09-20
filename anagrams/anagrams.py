@@ -1,4 +1,4 @@
-def reverse_sentence(sentence) -> str:
+def reverse_sentence(sentence: str) -> str:
 
     if not isinstance(sentence, str):
         raise TypeError("Argument must be a string")
