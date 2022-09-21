@@ -1,1 +1,1 @@
-from .anagrams import reverse_sentence
+from .anagrams import reverse_sentence, reverse_word
