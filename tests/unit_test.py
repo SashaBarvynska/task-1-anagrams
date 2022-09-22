@@ -28,7 +28,7 @@ class TestStringMethods(unittest.TestCase):
         ]
 
         for text, example in enumerate(list_example_for_mistake):
-            with self.subTest():
+            with self.subTest(text):
                 with self.assertRaises(TypeError) as error:
                     anagrams.reverse_sentence(example)
                 assert str(error.exception) == "Argument must be a string"
