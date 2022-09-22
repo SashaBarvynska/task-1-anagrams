@@ -12,12 +12,12 @@ class TestStringMethods(unittest.TestCase):
             ("AAaa2 AA", "aaAA2 AA"),
             ("Red nails ", "deR slian"),
         ]
-        i = 0
+
         for text, reversed_tsxt in cases:
 
             with self.subTest(text):
                 self.assertEqual(anagrams.reverse_sentence(text), reversed_tsxt)
-            i += 1
+
 
     def test_check_for_wrong_type_sentence(self):
         """check for wrong type"""
@@ -28,7 +28,7 @@ class TestStringMethods(unittest.TestCase):
         ]
 
         for text, example in enumerate(list_example_for_mistake):
-            with self.subTest(text):
+            with self.subTest():
                 with self.assertRaises(TypeError) as error:
                     anagrams.reverse_sentence(example)
                 assert str(error.exception) == "Argument must be a string"
@@ -41,12 +41,12 @@ class TestStringMethods(unittest.TestCase):
             ("AAaa2", "aaAA2"),
             ("Sasha123", "ahsaS123"),
         ]
-        i = 0
+    
         for text, reversed_tsxt in cases:
 
             with self.subTest(text):
                 self.assertEqual(anagrams.reverse_word(text), reversed_tsxt)
-            i += 1
+
 
     def test_check_for_wrong_type_word(self):
         """check for wrong argument type in word"""
