@@ -1,5 +1,6 @@
-import anagrams
 import unittest
+
+import anagrams
 
 
 class TestStringMethods(unittest.TestCase):
@@ -14,7 +15,7 @@ class TestStringMethods(unittest.TestCase):
         i = 0
         for text, reversed_tsxt in cases:
 
-            with self.subTest(i):
+            with self.subTest(text):
                 self.assertEqual(anagrams.reverse_sentence(text), reversed_tsxt)
             i += 1
 
@@ -26,8 +27,8 @@ class TestStringMethods(unittest.TestCase):
             {"Saasha": "ahsaS", "python123": "nohtyp123"},
         ]
 
-        for i, example in enumerate(list_example_for_mistake):
-            with self.subTest(i):
+        for text, example in enumerate(list_example_for_mistake):
+            with self.subTest(text):
                 with self.assertRaises(TypeError) as error:
                     anagrams.reverse_sentence(example)
                 assert str(error.exception) == "Argument must be a string"
@@ -43,7 +44,7 @@ class TestStringMethods(unittest.TestCase):
         i = 0
         for text, reversed_tsxt in cases:
 
-            with self.subTest(i):
+            with self.subTest(text):
                 self.assertEqual(anagrams.reverse_word(text), reversed_tsxt)
             i += 1
 
@@ -55,8 +56,8 @@ class TestStringMethods(unittest.TestCase):
             {"Saasha": "ahsaS", "python123": "nohtyp123"},
         ]
 
-        for i, example in enumerate(list_example_for_mistake):
-            with self.subTest(i):
+        for text, example in enumerate(list_example_for_mistake):
+            with self.subTest(text):
                 with self.assertRaises(TypeError) as error:
                     anagrams.reverse_word(example)
                 assert str(error.exception) == "Argument must be a string"
